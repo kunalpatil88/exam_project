@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashbord</title>
+</head>
+<body>
+   <div>
+    <a href="/home"><button>Back</button></a>
+</div>
+<div class="md-12">
+
+    <table style="width: 100%;">
+        <tr>
+            <th style="border: solid;" >Vehicle Number</th>
+            <th style="border: solid;">Vehicle Type</th>
+            <th style="border: solid;">Vehicle Model</th>
+            <th style="border: solid;">Vehicle Describtion</th>
+            
+            <th style="border: solid;">Update</th>
+            <th style="border: solid;">Delete</th>
+        </tr>
+        {% for x in data %}
+        <tr>
+            <td  style="border: solid; text-align: center; ">{{x.num}}</td>
+
+            {% if x.vtype == 1 %}
+                <td style="border: solid; text-align: center;">Two Wheeler</td>
+            {% elif x.vtype == 2 %}
+                <td style="border: solid; text-align: center;">Three Wheeler</td>
+            {% else %}
+                <td style="border: solid;text-align: center;">Four Wheeler</td>
+            {% endif %}
+
+            
+
+            <td style="border: solid; text-align: center;">{{x.vmodel}}</td>
+            <td style="border: solid;text-align: center;">{{x.vdesc}}</td>
+            
+
+            <td style="border: solid;  text-align: center;"><a href="/edit/{{x.id}}"> <button class="" >Update</button></a></td>
+            <td style="border: solid;  text-align: center;"><a href="/delete/{{x.id}}"><button class="" >Delete</button></a></td>
+        </tr>
+        {% endfor %}
+
+        
+    </table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Vehicle Management</title>
+</head>
+<body>
+    <main>
+        {% for x in data %}
+        <form method="POST">
+            {% csrf_token %} 
+            <div style=" color: brown;text-align:center; border: solid;background-color:burlywood; ">
+                <br>
+                <div class="">
+                    <label for="no">Vehicle Number : </label>
+                    <input id="no" type="text" name="vehicle_number" value="{{x.num}}" class="form-control" placeholder="Vehicle Number">   
+                </div>
+            
+                <div>
+            
+                    <label for="car">Vehicle Type : </label>
+            
+                        <select id="car" name="v_type"> 
+                        {% if x.vehicletype == 1 %}
+                        <option value="1">Two Wheeler</option>
+                        {% elif x.vehicletype == 2 %}
+                        <option value="2">Three Wheeler</option>
+                        {% else %}
+                        <option value="3">Four Wheeler</option>
+                        {% endif %}
+
+                        <option value="1">Two Wheeler</option>
+                        <option value="2">Three Wheeler</option>
+                        <option value="3">Four Wheeler</option>
+                     
+                        </select>
+                </div>
+            
+                <div>
+                        <label for="model">Vehicle Model : </label>
+                        <input type="text" name="model" value="{{x.vmodel}}" id="model" placeholder="Vehicle Model">
+                        
+                </div>
+                <div>
+                    <label for="des">Vehicle Description : </label>
+                    <textarea id="des" name="Vehicledesc"  rows="1" cols="50" placeholder="Vehicle Description">{{x.vdesc}}</textarea>
+                    <input type="submit" value="Submit" >
+                </div>
+                
+            
+            
+            </div>
+            
+            
+            
+            
+        </form>
+        {% endfor %}
+    </main>
+</body>
+</html>

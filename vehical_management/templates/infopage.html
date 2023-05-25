@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Vehicle Management</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>vehical Management</h1>
+    </div>
+    <main>
+        <div style=text-align:center>
+            <a href="/admin"><button style="color:black;">superuser</button></a>
+            <a href="/admin"><button style="color:black;">admin</button></a>
+            <a href="/admin"><button style="color:black;">user</button></a>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <br> 
+            <div style=" color: brown;text-align:center; border: solid;background-color:burlywood; ">
+                <br>
+                <div class="">
+                    <label for="no">Vehicle Number : </label>
+                    <br>
+                    <input id="no" type="text" name="vehicle_number" class="form-control" placeholder="Vehicle Number">   
+                </div>
+                <br>
+                <div>
+            
+                    <label for="car" > Vehicle Type : </label>
+                    <br>
+            
+                        <select id="car" name="v_type"> 
+                        <option value="">Select options</option>
+                        <option value="1">Two Wheeler</option>
+                        <option value="2">Three Wheeler</option>
+                        <option value="3">Four Wheeler</option>
+                     
+                        </select>
+                </div>
+                <br>
+                <div>
+                        <label for="model">Vehicle Model : </label>
+                        <br>
+                        <input type="text" name="model" id="model" placeholder="Vehicle Model">
+                        
+                </div>
+                <br>
+                <div>
+                    <label for="des">Vehicle Description : </label>
+                    <br>
+                    <textarea id="des" name="Vehicledesc" rows="1" cols="50" placeholder="Vehicle Description"></textarea>
+                    <br>
+                    <input type="submit" value="Submit">
+                    <br>
+                </div>
+                <br>
+            
+            
+            </div>
+            
+            
+            <br>
+            
+        </form>
+    </main>
+</body>
+</html>
